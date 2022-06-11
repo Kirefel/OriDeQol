@@ -1,6 +1,8 @@
 # QoL Mod
 
-Features:
+Contains various minor improvements and bug fixes for quality of life purposes.
+
+## Features
 
 * Control transparency of ability menu for Save Anywhere
 * Run game in the background when deselected
