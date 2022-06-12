@@ -24,7 +24,7 @@ namespace QolMod
 
         private void Update()
         {
-            float opacity = Characters.Sein.IsSuspended ? 1f : Settings.abilityMenuOpacity;
+            float opacity = Characters.Sein.IsSuspended ? 1f : Settings.abilityMenuOpacity.Value;
             skillTreeManager.NavigationManager.FadeAnimator.SetParentOpacity(opacity);
         }
     }

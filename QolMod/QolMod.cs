@@ -18,10 +18,10 @@ namespace QolMod
             BashDeadzone.Patch(harmony);
             MoreSaveSlots.Patch(harmony);
 
-            Cursor.lockState = Settings.cursorLock ? CursorLockMode.Confined : CursorLockMode.None;
-            // Settings.cursorLock.OnChanged += value => Cursor.lockState = value ? CursorLockMode.Confined : CursorLockMode.None;
+            Cursor.lockState = Settings.cursorLock.Value ? CursorLockMode.Confined : CursorLockMode.None;
+            Settings.cursorLock.OnValueChanged += value => Cursor.lockState = value ? CursorLockMode.Confined : CursorLockMode.None;
 
-            CustomMenuManager.RegisterOptionsScreen<OptionsScreen>("QoL", 100);
+            CustomMenuManager.RegisterOptionsScreen<QolOptionsScreen>("QoL", 100);
         }
 
         public void Unload()

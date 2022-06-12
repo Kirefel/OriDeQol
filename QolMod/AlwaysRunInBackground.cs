@@ -7,7 +7,7 @@ namespace QolMod
     {
         private static bool Prefix()
         {
-            if (Settings.runInBackground)
+            if (Settings.runInBackground.Value)
             {
                 GameController.IsFocused = true;
                 return false;
