@@ -21,7 +21,7 @@ namespace QolMod
             Cursor.lockState = Settings.cursorLock.Value ? CursorLockMode.Confined : CursorLockMode.None;
             Settings.cursorLock.OnValueChanged += value => Cursor.lockState = value ? CursorLockMode.Confined : CursorLockMode.None;
 
-            CustomMenuManager.RegisterOptionsScreen<QolOptionsScreen>("QoL", 100);
+            CustomMenuManager.RegisterOptionsScreen<QolOptionsScreen>("Advanced", 0);
         }
 
         public void Unload()
