@@ -17,7 +17,7 @@ jobs:
       - uses: microsoft/setup-msbuild@v1.1
 
       - name: Build and package
-        run: msbuild /t:Build /restore /p:Configuration=Release /p:OutDir=..\build
+        run: .\build.ps1
 
       - name: Publish release
         uses: softprops/action-gh-release@v1
