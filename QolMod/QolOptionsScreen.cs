@@ -11,6 +11,7 @@ namespace QolMod
             AddSlider(Settings.bashDeadzone, "Bash Deadzone", 0f, 1f, 0.1f, "How large should the deadzone be while bashing (min 0%, max 100%)");
             AddToggle(Settings.runInBackground, "Run In Background", "Whether the game should continue to run when the window is not selected");
             AddSlider(Settings.abilityMenuOpacity, "Ability Menu Opacity", 0f, 1f, 0.1f, "How opaque should the ability menu be while moving in the background (min 0%, max 100%)");
+            AddToggle(Settings.skipText, "Skip Text", "Whether the text boxes from Sein and pickups should be skipped");
         }
     }
 }
