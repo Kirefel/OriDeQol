@@ -9,5 +9,6 @@ namespace QolMod
         public static FloatSetting bashDeadzone = new FloatSetting("qolBashDeadzone", 0.5f);
         public static FloatSetting abilityMenuOpacity = new FloatSetting("qolAbilityMenuOpacity", 0.5f);
         public static FloatSetting screenShakeStrength = new FloatSetting("qolScreenShakeStrength", 1f);
+        public static BoolSetting skipText = new BoolSetting("qolSkipText", true);
     }
 }
