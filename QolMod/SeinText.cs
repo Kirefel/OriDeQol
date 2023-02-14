@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using HarmonyLib;
 using OriDeModLoader;
 
@@ -9,7 +9,7 @@ namespace QolMod
     {
         public static bool Prefix(MessageControllerB __instance, GameObject messageBoxPrefab)
         {
-            if (!Settings.skipText)
+            if (!Settings.skipText.Value)
                 return HarmonyHelper.ContinueExecution;
 
             // Just get rid of sein text, not spirit tree/control hints etc.
