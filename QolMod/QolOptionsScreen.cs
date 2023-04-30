@@ -13,6 +13,7 @@ namespace QolMod
             AddSlider(Settings.abilityMenuOpacity, "Ability Menu Opacity", 0f, 1f, 0.1f, "How opaque should the ability menu be while moving in the background (min 0%, max 100%)");
             AddToggle(Settings.skipText, "Skip Text", "Whether the text boxes from Sein and pickups should be skipped");
             AddToggle(Settings.cameraSway, "Camera Sway", "Whether the camera should subtly move when stationary");
+            AddSlider(Settings.hudScale, "HUD Scale", 0.4f, 1.6f, 0.1f, "How large the HUD should appear on screen (min 40%, max 160%)");
         }
     }
 }

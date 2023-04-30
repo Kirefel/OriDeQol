@@ -11,5 +11,6 @@ namespace QolMod
         public static FloatSetting screenShakeStrength = new FloatSetting("qolScreenShakeStrength", 1f);
         public static BoolSetting skipText = new BoolSetting("qolSkipText", false);
         public static BoolSetting cameraSway = new BoolSetting("qolCameraSway", false);
+        public static FloatSetting hudScale = new FloatSetting("qolHudScale", 1f);
     }
 }
