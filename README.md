@@ -14,3 +14,4 @@ Contains various minor improvements and bug fixes for quality of life purposes.
 * Zoom out further on the map
 * Pause menu cyclical navigation and bugfixes
 * Control transparency of ability menu for Save Anywhere
+* HUD scale
