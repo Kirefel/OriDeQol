@@ -51,8 +51,7 @@ public class Plugin : BaseUnityPlugin
         CursorLock.SettingChanged += (_, _) => Cursor.lockState = CursorLock.Value ? CursorLockMode.Confined : CursorLockMode.None;
 
 
-
-        PauseMenuQTMEverything.Init();
+        QTMBugfix.Init();
         On.AreaMapNavigation.Awake += (orig, self) =>
         {
             orig(self);

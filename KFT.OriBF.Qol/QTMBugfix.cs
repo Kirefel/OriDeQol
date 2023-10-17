@@ -1,6 +1,6 @@
 ﻿namespace KFT.OriBF.Qol;
 
-internal static class PauseMenuQTMEverything
+internal static class QTMBugfix
 {
     public static bool delayNavigation;
 
