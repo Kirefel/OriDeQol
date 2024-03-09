@@ -15,3 +15,4 @@ Contains various minor improvements and bug fixes for quality of life purposes.
 * Pause menu cyclical navigation and bugfixes
 * Control transparency of ability menu for Save Anywhere
 * HUD scale
+* Shorter teleportation animation

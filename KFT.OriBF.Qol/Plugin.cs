@@ -19,6 +19,7 @@ public class Plugin : BaseUnityPlugin
     public static ConfigEntry<bool> SkipText { get; set; }
     public static ConfigEntry<bool> CameraSway { get; set; }
     public static ConfigEntry<float> HudScale { get; set; }
+    public static ConfigEntry<bool> FasterTeleport { get; set; }
 
     private Harmony harmony;
 
@@ -40,10 +41,11 @@ public class Plugin : BaseUnityPlugin
         SkipText = Config.Bind("QOL", "Skip Text", false, "Whether the text boxes from Sein and pickups should be skipped");
         CameraSway = Config.Bind("QOL", "Camera Sway", true, "Whether the camera should subtly move when stationary");
         HudScale = Config.Bind("QOL", "HUD Scale", 1f, "How large the HUD should appear on screen (min 40%, max 160%)");
+        FasterTeleport = Config.Bind("QOL", "Faster Teleporting", true, "Whether the teleportation animation should be sped up");
 
-        if (Chainloader.PluginInfos.TryGetValue(OriModding.BF.ConfigMenu.PluginInfo.PLUGIN_GUID, out var pi) && pi.Instance is OriModding.BF.ConfigMenu.Plugin configMenu)
+        if (Chainloader.PluginInfos.TryGetValue(OriModding.BF.ConfigMenu.PluginInfo.PLUGIN_GUID, out var pi))
         {
-            configMenu.ConfigureSlider(HudScale, 0.4f, 1.6f, 0.1f);
+            ConfigMenu(pi.Instance);
         }
 
 
@@ -57,6 +59,12 @@ public class Plugin : BaseUnityPlugin
             orig(self);
             self.AreaMapZoomLevel = 1;
         };
+    }
+
+    private void ConfigMenu(BaseUnityPlugin plugin)
+    {
+        var configMenu = plugin as OriModding.BF.ConfigMenu.Plugin;
+        configMenu.ConfigureSlider(HudScale, 0.4f, 1.6f, 0.1f);
     }
 
     private void OnDestroy()
