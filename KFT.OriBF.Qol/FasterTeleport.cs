@@ -1,26 +1,19 @@
 ﻿using HarmonyLib;
-using System.Collections.Generic;
-using System.Reflection.Emit;
 
 namespace KFT.OriBF.Qol;
+
+// Removes the 7 second minimum teleport duration
+// Ported from Will of the Wisps rando by zre https://github.com/ori-community/wotw-rando-client/blob/1f9fe318da786a8e969561f323093a89d20277c4/projects/Randomizer/game/behaviour_changes/faster_teleportation.cpp
 
 [HarmonyPatch]
 public static class FasterTeleport
 {
-    public static float GetMinimumTPDuration()
+    [HarmonyPatch(typeof(TeleporterController), nameof(TeleporterController.FixedUpdate))]
+    static void Postfix(ref float ___m_startTime)
     {
-        return Plugin.FasterTeleport.Value ? 0f : 7f;
-    }
-
-    [HarmonyPatch(typeof(TeleporterController), nameof(TeleporterController.FixedUpdate)), HarmonyTranspiler]
-    static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
-    {
-        foreach (var ci in instructions)
+        if (Plugin.FasterTeleport.Value)
         {
-            if (ci.opcode == OpCodes.Ldc_R4 && (float)ci.operand == 7f)
-                yield return CodeInstruction.Call(typeof(FasterTeleport), nameof(GetMinimumTPDuration));
-            else
-                yield return ci;
+            ___m_startTime -= 7f;
         }
     }
 }
