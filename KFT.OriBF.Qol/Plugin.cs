@@ -20,6 +20,7 @@ public class Plugin : BaseUnityPlugin
     public static ConfigEntry<bool> CameraSway { get; set; }
     public static ConfigEntry<float> HudScale { get; set; }
     public static ConfigEntry<bool> FasterTeleport { get; set; }
+    public static ConfigEntry<bool> MouseChargeJumpControls { get; set; }
 
     private Harmony harmony;
 
@@ -42,6 +43,8 @@ public class Plugin : BaseUnityPlugin
         CameraSway = Config.Bind("QOL", "Camera Sway", true, "Whether the camera should subtly move when stationary");
         HudScale = Config.Bind("QOL", "HUD Scale", 1f, "How large the HUD should appear on screen (min 40%, max 160%)");
         FasterTeleport = Config.Bind("QOL", "Faster Teleporting", true, "Whether the teleportation animation should be sped up");
+        MouseChargeJumpControls = Config.Bind("QOL", "Cursor Charge Jump Control", false, "Whether the mouse cursor can be used to aim charge jump");
+
 
         if (Chainloader.PluginInfos.TryGetValue(OriModding.BF.ConfigMenu.PluginInfo.PLUGIN_GUID, out var pi))
         {
