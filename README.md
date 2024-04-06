@@ -16,3 +16,6 @@ Contains various minor improvements and bug fixes for quality of life purposes.
 * Control transparency of ability menu for Save Anywhere
 * HUD scale
 * Shorter teleportation animation
+* Swim towards mouse cursor
+* Invert swim boost
+* Charge jump towards mouse cursor
