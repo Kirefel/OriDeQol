@@ -21,6 +21,8 @@ public class Plugin : BaseUnityPlugin
     public static ConfigEntry<float> HudScale { get; set; }
     public static ConfigEntry<bool> FasterTeleport { get; set; }
     public static ConfigEntry<bool> MouseChargeJumpControls { get; set; }
+    public static ConfigEntry<bool> MouseSwimControls { get; set; }
+    public static ConfigEntry<bool> InvertSwim { get; set; }
 
     private Harmony harmony;
 
@@ -44,7 +46,8 @@ public class Plugin : BaseUnityPlugin
         HudScale = Config.Bind("QOL", "HUD Scale", 1f, "How large the HUD should appear on screen (min 40%, max 160%)");
         FasterTeleport = Config.Bind("QOL", "Faster Teleporting", true, "Whether the teleportation animation should be sped up");
         MouseChargeJumpControls = Config.Bind("QOL", "Cursor Charge Jump Control", false, "Whether the mouse cursor can be used to aim charge jump");
-
+        MouseSwimControls = Config.Bind("QOL", "Cursor Swim Control", false, "Whether Ori will swim towards the mouse cursor");
+        InvertSwim = Config.Bind("QOL", "Invert Swim", false, "Whether Ori swims at maximum speed without holding [Jump]");
 
         if (Chainloader.PluginInfos.TryGetValue(OriModding.BF.ConfigMenu.PluginInfo.PLUGIN_GUID, out var pi))
         {
